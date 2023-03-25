@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <script type="text/javascript">
+        function myFunc(id) {
+             
+            let elem = document.getElementById('b1');
+            let btn = document.getElementById(id);
+            elem.value = btn.textContent
+        }
+    </script>
+
+    <title>Calculator</title>
+    <script src="{% static " firstpage.js" %}"></script>
+</head>
+
+
+
+<body>
+    <div id="operator_btns">
+        <button id="plus" class="MetroBtn" onClick="myFunc(this.id)" ="op='+'">+</button>
+        <button id="minus" class="MetroBtn" onClick="myFunc(this.id)" ="op='-'">-</button>
+        <button id="times" class="MetroBtn" onClick="myFunc(this.id)" ="op='*'">*</button>
+        <button id="divide" class="MetroBtn" onClick="myFunc(this.id)" ="op='/'">/</button>
+    </div>
+
+    <form method="post">
+        {% csrf_token %}
+        <input type="number" id="id_num1" name="num1" value="{{num1}}" />
+
+
+        <input type="text" name="btnfld" id="b1" size="1" />
+
+        <input type="number" id="id_num2" name="num2"value="{{num2}}" />
+        <br>
+
+
+        <button onclick="func()">Calc</button>
+    </form>
+
+
+
+    <input id="result" value="{{result}}" />
+</body>
+</html>
