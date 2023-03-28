@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Entering Matrix</title>
+</head>
+<body>
+    <h1>Pls enter matrix:</h1>
+    <form action="{% url 'matrix_handler' %}" method="post">
+        {% csrf_token %}
+        <label for="rows">amount rows:</label>
+        <input type="number" id="rows" name="rows" required><br><br>
+        <label amount columns:</label>
+        <input type="number" id="cols" name="cols" required><br><br>
+        <table id="matrix">
+            
+        </table>
+        <br>
+        <input type="submit" value="Send">
+    </form>
+
+    <script>
+  
+  function createCell(row, col) {
+   let cell = document.createElement("td");
+   let input = document.createElement("input");
+   input.type = "number";
+   input.name = `matrix_${row}_${col}`;
+   cell.appendChild(input);
+   return cell;
+  }
+
+  
+  function createRow(rowNum, cols) {
+   let row = document.createElement("tr");
+   for (let i = 0; i < cols; i++) {
+    row.appendChild(createCell(rowNum, i));
+   }
+   return row;
+  }
+
+  let rowsInput = document.getElementById("rows");
+  let colsInput = document.getElementById("cols");
+  let matrixTable = document.getElementById("matrix");
+
+  rowsInput.addEventListener("input", function() {
+   let rows = parseInt(this.value);
+   let cols = parseInt(colsInput.value);
+   matrixTable.innerHTML = "";
+   for (let i = 0; i < rows; i++) {
+    matrixTable.appendChild(createRow(i, cols));
+   }
+  });
+
+  colsInput.addEventListener("input", function() {
+   let rows = parseInt(rowsInput.value);
+   let cols = parseInt(this.value);
+   matrixTable.innerHTML = "";
+   for (let i = 0; i < rows; i++) {
+    matrixTable.appendChild(createRow(i, cols));
+   }
+  });
+    </script>
+</body>
+</html>

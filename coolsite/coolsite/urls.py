@@ -20,10 +20,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from  Calc.views import* 
- 
-
+from Det.views import* 
+from  KNW.views import*
 urlpatterns = [
     
     #path('', index),
-    path('',Calculate)
+    path('',Open)
+
 ]

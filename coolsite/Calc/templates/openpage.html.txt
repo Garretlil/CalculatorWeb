@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Крестики-нолики</title>
+ <style>
+  table {
+   margin: auto;
+   border-collapse: collapse;
+   font-size: 30px;
+  }
+  td {
+   width: 80px;
+   height: 80px;
+   text-align: center;
+   vertical-align: middle;
+   border: 1px solid black;
+   cursor: pointer;
+  }
+  td:hover {
+   background-color: lightgrey;
+  }
+ </style>
+</head>
+<body>
+ <h1>Крестики-нолики</h1>
+ <table id="game-board">
+  <tr>
+   <td id="cell-0"></td>
+   <td id="cell-1"></td>
+   <td id="cell-2"></td>
+  </tr>
+  <tr>
+   <td id="cell-3"></td>
+   <td id="cell-4"></td>
+   <td id="cell-5"></td>
+  </tr>
+  <tr>
+   <td id="cell-6"></td>
+   <td id="cell-7"></td>
+   <td id="cell-8"></td>
+  </tr>
+ </table>
+
+ <script>
+  var currentPlayer = "X";
+  var gameBoard = document.getElementById("game-board");
+  var cells = gameBoard.getElementsByTagName("td");
+
+  for (var i = 0; i < cells.length; i++) {
+   cells[i].addEventListener("click", function() {
+    if (this.innerHTML === "") {
+     this.innerHTML = currentPlayer;
+     if (currentPlayer === "X") {
+      currentPlayer = "O";
+     } else {
+      currentPlayer = "X";
+     }
+    }
+   });
+  }
+ </script>
+</body>
+</html>

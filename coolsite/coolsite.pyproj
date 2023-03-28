@@ -30,6 +30,20 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Det\admin.py" />
+    <Compile Include="Det\apps.py" />
+    <Compile Include="Det\migrations\__init__.py" />
+    <Compile Include="Det\models.py" />
+    <Compile Include="Det\tests.py" />
+    <Compile Include="Det\views.py" />
+    <Compile Include="Det\__init__.py" />
+    <Compile Include="KNW\admin.py" />
+    <Compile Include="KNW\apps.py" />
+    <Compile Include="KNW\migrations\__init__.py" />
+    <Compile Include="KNW\models.py" />
+    <Compile Include="KNW\tests.py" />
+    <Compile Include="KNW\views.py" />
+    <Compile Include="KNW\__init__.py" />
     <Compile Include="manage.py" />
     <Compile Include="coolsite\__init__.py" />
     <Compile Include="coolsite\settings.py" />
@@ -48,6 +62,10 @@
     <Content Include="Calc\static\JavaScript.js" />
     <Content Include="Calc\templates\firstpage.html" />
     <Content Include="Calc\templates\MyApp1\firstpage.html" />
+    <Content Include="Det\templates\Det\forDet.html" />
+    <Content Include="KNW\static\KNWStartGame.css" />
+    <Content Include="KNW\templates\KNW\index.html" />
+    <Content Include="KNW\templates\Page.html" />
     <Content Include="requirements.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -57,6 +75,15 @@
     <Folder Include="Calc\migrations\" />
     <Folder Include="Calc\templates\" />
     <Folder Include="Calc\templates\MyApp1\" />
+    <Folder Include="Det\" />
+    <Folder Include="Det\migrations\" />
+    <Folder Include="Det\templates\" />
+    <Folder Include="Det\templates\Det\" />
+    <Folder Include="KNW\" />
+    <Folder Include="KNW\migrations\" />
+    <Folder Include="KNW\static\" />
+    <Folder Include="KNW\templates\" />
+    <Folder Include="KNW\templates\KNW\" />
   </ItemGroup>
   <ItemGroup>
     <Interpreter Include="..\..\coolsite\coolsite\env\env\">
